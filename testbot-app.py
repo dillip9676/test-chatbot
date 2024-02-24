@@ -119,7 +119,7 @@ def main():
     llm = llm_model()
     
     embeddings = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-large-en-v1.5",
-                                       model_kwargs={'device': 'cuda'}, encode_kwargs = {'normalize_embeddings': True})
+                                       model_kwargs={'device': 'cpu'}, encode_kwargs = {'normalize_embeddings': True})
 
     retriever1 = files_retriever(embeddings)  
     retriever2 = QA_retriever(embeddings)
